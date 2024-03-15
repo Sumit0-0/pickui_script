@@ -4,6 +4,8 @@
 @version        1.0.0
 @description    picuki custom style by me
 @author         Me
+// @downloadURL https://github.com/Sumit0-0/picuki_script/raw/main/picuki.style.css
+// @updateURL   https://github.com/Sumit0-0/picuki_script/raw/main/picuki.style.css
 @preprocessor stylus
 @advanced color primary_color  "Primary Color" #5851db
 @advanced color bg_hover_color "Background Hover Color" rgba(136, 132, 214, 0.5)

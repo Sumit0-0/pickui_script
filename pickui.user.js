@@ -5,8 +5,8 @@
 // @grant       none
 // @version     1.0
 // @author      -
-// @downloadURL
-// @updateURL
+// @downloadURL https://github.com/Sumit0-0/picuki_script/raw/main/pickui.user.js
+// @updateURL   https://github.com/Sumit0-0/picuki_script/raw/main/pickui.user.js
 // @description Picuki Instagram frontend Some Features.
 // @icon        https://www.google.com/s2/favicons?sz=64&domain=picuki.me
 // ==/UserScript==
