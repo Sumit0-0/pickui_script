@@ -1,0 +1,183 @@
+/* ==UserStyle==
+@name           Picuki - SK
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    picuki custom style by me
+@author         Me
+@preprocessor stylus
+@advanced color primary_color  "Primary Color" #5851db
+@advanced color bg_hover_color "Background Hover Color" rgba(136, 132, 214, 0.5)
+@var checkbox       borderR        "Toggle Border"          0
+==/UserStyle== */
+@-moz-document domain("picuki.me") {
+  /*Def: primary_color:#5851db - bg_hover_color:rgb(136, 132, 214,1); borderR:0*/
+  :root {
+    --primary: #000;
+    --bg-primary: #f8f8f8;
+    --bg-secondary: #e6e6e6;
+    --border-primary: #242424;
+    --link-text: primary_color;
+    --ligh-text: #525252;
+    --bg-hover: bg_hover_color;
+    --transition: all 0.3s ease-in-out;
+
+    @media (prefers-color-scheme: dark) {
+      --primary: #ffffff;
+      --bg-primary: #1a1a1a;
+      --bg-secondary: #3a3a3a;
+      --border-primary: #dfdfdf;
+      --ligh-text: #c0c0c0;
+    }
+  }
+
+  if borderR {
+    .g-header .g-header-inner .search input,
+    .user-header .tabs .tab,
+    .swiper-plugin-pagination__item,
+    .more- posts,
+    .bookmark-btn,
+    .post-item,
+    img,
+    video {
+      border-radius: 0px !important;
+    }
+  }
+  /* --------- Display None --------- */
+  .wrap .post-content .media-wrap .play,
+  .wrap .post-content .media-wrap img {
+    display: none !important;
+  }
+
+  body,
+  .g-header,
+  .slogan {
+    background-color: var(--bg-primary) !important;
+  }
+
+  .user-info img,
+  .avatar img {
+    border-radius: 100% !important;
+    border: 2px solid var(--link-text);
+  }
+
+  .post-item {
+    display: grid;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    padding: 6px;
+    align-content: space-between;
+    transition: var(--transition);
+    border-radius: 12px;
+  }
+
+  .post-item:hover {
+    background: var(--bg-hover);
+    transition: var(--transition);
+  }
+
+  img,
+  video {
+    border-radius: 12px;
+  }
+
+  .post-items .post-item a:hover img {
+    scale: 1.01;
+    transition: var(--transition);
+  }
+
+  .post-item .desc,
+  .post-content,
+  .nickname,
+  .comment .text,
+  .counter .counter-item span,
+  .counter div,
+  .g-header .g-header-inner .search button i,
+  .bio,
+  .date,
+  .g-footer .copy,
+  .time,
+  .index-section-title,
+  .fllow-count,
+  .increase > div,
+  .item > div {
+    color: var(--primary) !important;
+  }
+
+  .post-item .action span {
+    font-size: 10px !important;
+    color: var(--primary) !important;
+  }
+
+  .post-item .action a:hover {
+    text-decoration: underline;
+  }
+
+  a,
+  .logo .iconfont.icon-Stats,
+  .logo span,
+  .slogan-inner {
+    color: var(--link-text);
+  }
+
+  .post-content {
+    display: grid;
+  }
+
+  .post-content .desc {
+    margin-top: 6px;
+    order: 2;
+  }
+
+  .post-content .downloads {
+    order: 3;
+    width: fit-content;
+    margin-top: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-transform: uppercase;
+    border: 1px solid var(--link-text);
+  }
+
+  .index-section-title {
+    font-size: 1.5rem;
+  }
+
+  .g-header .g-header-inner .search {
+    width: 440px !important;
+  }
+
+  .g-header .g-header-inner .search input {
+    background-color: var(--bg-secondary);
+    color: var(--primary);
+    width: 440px !important;
+  }
+
+  .wrap .post-content {
+    width: 340px !important;
+  }
+
+  .bookmark-btn {
+    padding: 4px 8px;
+    font-weight: 500;
+    background-color: transparent;
+    border: 1px solid #1c6758;
+    color: var(--link-text);
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    border-radius: 50px;
+  }
+
+  .bookmark-btn:hover {
+    background-color: #e8a5ac;
+    color: black;
+    transition: all 0.3s ease-out;
+  }
+
+  .media-wrap.media-video video:after {
+    content: "";
+    position: relative;
+    z-index: 9999;
+    inset: 0;
+    background-color: #7c4f4fcc;
+  }
+}
