@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Picuki - SK
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
+@version        1.0.1
 @description    picuki custom style by me
 @author         Me
 // @downloadURL https://github.com/Sumit0-0/picuki_script/raw/main/picuki.style.css
@@ -145,13 +145,13 @@
   }
 
   .g-header .g-header-inner .search {
-    width: 440px !important;
+    width: 440px;
   }
 
   .g-header .g-header-inner .search input {
     background-color: var(--bg-secondary);
     color: var(--primary);
-    width: 440px !important;
+    width: 440px;
   }
 
   .wrap .post-content {
@@ -181,5 +181,26 @@
     z-index: 9999;
     inset: 0;
     background-color: #7c4f4fcc;
+  }
+  
+  @media screen and (max-width: 395px){
+      .g-header .g-header-inner .search, .g-header .g-header-inner .search input{
+          width: auto !important;
+      }
+      .g-header{
+          height:auto !important;
+      }
+      .user-header .tabs, .g-header .g-header-inner{
+          flex-wrap: wrap;
+          gap: 8px 4px;
+      }
+      .g-header-inner label{
+          margin-left: auto;
+      }
+      .post-item .action .date {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow:ellipsis;
+      }
   }
 }
