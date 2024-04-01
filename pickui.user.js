@@ -22,13 +22,17 @@ const mediaPlayer = () => {
   const videoEle = document.createElement("video");
   const sourceEle = document.createElement("source");
   sourceEle.setAttribute("type", "video/mp4");
-  videoEle.setAttribute("controls", "controls");
+  videoEle.autoplay = true;
+  videoEle.controls = true;
+  videoEle.loop = true;
   videoEle.setAttribute("style", "width: 100%; height: 100%;");
-  const mediaWrap = document.querySelector(".media-wrap");
+  const mediaWrap = document.querySelector(".post-content");
+  const data  = document.querySelector(".media-wrap");
   if (mediaWrap) {
-    sourceEle.setAttribute("src", mediaWrap.getAttribute("data-src"));
+    sourceEle.setAttribute("src", data.getAttribute("data-src"));
     videoEle.appendChild(sourceEle);
     mediaWrap.appendChild(videoEle);
+    data.remove();
   } else {
     console.error(
       "Video Source Not Found: " + "Picuki Features couldn't play video."
