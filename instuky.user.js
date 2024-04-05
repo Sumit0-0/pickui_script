@@ -98,13 +98,12 @@ if (window.location.pathname.includes("/post/")) {
 
   const video_ = document.createElement("video");
   video_.controls = true;
-  video_.autoplay = true;
   video_.loop = true;
-  video_.src
   video_.setAttribute("style","width:100%; height:70vh;")
 
   const videoSrc_ = document.createElement("source");
   videoSrc_.src = videoLink.href;
+  videoSrc_.type = "video/mp4";
 
   video_.appendChild(videoSrc_);
   videoWrapper.innerHTML = "";
@@ -112,6 +111,43 @@ if (window.location.pathname.includes("/post/")) {
 
 
 }
+/* ------------- Popular ------------- */
+const injectPopular = () => {
+const trending = document.querySelector(".trending .container .trending__list");
+const users = [
+  "lohomord",
+  "meetsanika",
+  "zendaya",
+  "raynavallandingham"
+];
+
+  if(trending){
+    trending.innerHTML = '';
+  }
+
+for (let i = 0; i < users.length; i++) {
+  const lisEle = document.createElement("li");
+  lisEle.classList.add("trending__item", "item-trending");
+
+  const lisLink = document.createElement("a");
+  lisLink.classList.add("item-trending__link");
+  lisLink.setAttribute("href", /profile/${users[i]});
+  lisLink.setAttribute("title", @${users[i]});
+
+  const lisLinkSpan = document.createElement("span");
+  lisLinkSpan.textContent = @${users[i]};
+  lisLinkSpan.classList.add("item-trending__title", "text_bold");
+
+  lisLink.appendChild(lisLinkSpan);
+  lisEle.appendChild(lisLink);
+  if(trending){
+  trending.appendChild(lisEle);
+  }
+}
+
+}
+
+injectPopular();
 
 /* ------------- Other ------------- */
 const observeElement = (callback, options) => {
