@@ -100,10 +100,12 @@ if (window.location.pathname.includes("/post/")) {
   video_.controls = true;
   video_.loop = true;
   video_.setAttribute("style","width:100%; height:70vh;")
+  video_.crossorigin = "anonymous";
 
   const videoSrc_ = document.createElement("source");
   videoSrc_.src = videoLink.href;
   videoSrc_.type = "video/mp4";
+  videoSrc_.crossorigin = "anonymous";
 
   video_.appendChild(videoSrc_);
   videoWrapper.innerHTML = "";
@@ -131,11 +133,11 @@ for (let i = 0; i < users.length; i++) {
 
   const lisLink = document.createElement("a");
   lisLink.classList.add("item-trending__link");
-  lisLink.setAttribute("href", /profile/${users[i]});
-  lisLink.setAttribute("title", @${users[i]});
+  lisLink.setAttribute("href", `/profile/${users[i]}`);
+  lisLink.setAttribute("title", `@${users[i]}`);
 
   const lisLinkSpan = document.createElement("span");
-  lisLinkSpan.textContent = @${users[i]};
+  lisLinkSpan.textContent = `@${users[i]}`;
   lisLinkSpan.classList.add("item-trending__title", "text_bold");
 
   lisLink.appendChild(lisLinkSpan);
@@ -163,12 +165,11 @@ const observeElement = (callback, options) => {
 
 const infniteScroll = () => {
   const showMoreBtn = document.querySelector(".more-posts__button");
-  showMoreBtn.style.visibility = "hidden";
-
   if (!showMoreBtn) {
     console.error("No element with class 'more-posts__button' found");
     return;
   }
+  showMoreBtn.style.visibility = "hidden";
 
   const observerOptions = {
     root: null,
