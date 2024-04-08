@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name        instuky.com
-// @namespace   Violentmonkey Scripts
+// @namespace   Instucky addon Script - GetDopamin
 // @match       https://instuky.com/*
 // @grant       none
 // @version     1.0
-// @author      -
+// @author      GetDopamin
 // @require     https://cdn.jsdelivr.net/npm/@violentmonkey/dom@2
 // @require     https://cdn.jsdelivr.net/npm/@violentmonkey/shortcut@1
-// @description 16/3/2024, 1:38:16 pm
+// @description This is Instucky User Script for addon functionality 
 // ==/UserScript==
 
 /* ------------- SYTLE INJECT ------------- */
