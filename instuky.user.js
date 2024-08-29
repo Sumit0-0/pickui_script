@@ -11,6 +11,8 @@
 // ==/UserScript==
 
 /* ------------- SYTLE INJECT ------------- */
+const follNumbers = document.querySelectorAll(".profile__info-list .profile__info-item.item-info .item-info__value
+");
 const customStyle = `
     .custom-btn {
       background-color: #fa865f;
@@ -147,6 +149,23 @@ for (let i = 0; i < users.length; i++) {
   }
 }
 
+}
+
+function formatNumber(num) {
+    if (num >= 1e6) {
+        return (num / 1e6).toFixed(1) + 'M';
+    } else if (num >= 1e3) {
+        return (num / 1e3).toFixed(1) + 'K';
+    } else {
+        return num.toString();
+    }
+}
+
+if(follNumbers){
+    follNumbers.forEach((numbs)=>{
+        const originalNumber = parseFloat(numbs.textContent.replace(/,/g, ''));
+        numbs.textContent = formatNumber(originalNumber);
+    })
 }
 
 injectPopular();
