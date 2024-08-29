@@ -161,11 +161,14 @@ function formatNumber(num) {
     }
 }
 
-if(follNumbers){
-    follNumbers.forEach((numbs)=>{
-        const originalNumber = parseFloat(numbs.textContent.replace(/,/g, ''));
-        numbs.textContent = formatNumber(originalNumber);
-    })
+if (follNumbers) {
+    follNumbers.forEach((numbs) => {
+        const originalText = numbs.textContent.trim(); // Remove leading/trailing whitespace
+        const originalNumber = parseFloat(originalText.replace(/,/g, '')); // Convert to a number without commas
+        if (!isNaN(originalNumber)) { // Check if the conversion was successful
+            numbs.textContent = formatNumber(originalNumber); // Set the formatted number back
+        }
+    });
 }
 
 injectPopular();
