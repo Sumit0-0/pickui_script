@@ -11,8 +11,7 @@
 // ==/UserScript==
 
 /* ------------- SYTLE INJECT ------------- */
-const follNumbers = document.querySelectorAll(".profile__info-list .profile__info-item.item-info .item-info__value
-");
+const follNumbers = document.querySelectorAll(".profile__info-list .profile__info-item.item-info .item-info__value");
 const customStyle = `
     .custom-btn {
       background-color: #fa865f;
